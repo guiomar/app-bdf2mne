@@ -1,5 +1,36 @@
 # app-bdf2mne
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Converts an EEG recording in BioSemi BDF format to an MNE-Python raw FIF file with mne.io.read_raw_bdf.**
+
+Reads the bdf file with MNE-Python and saves it unchanged as raw.fif so that MNE-based MEG/EEG Apps can use it. The BIDS sidecar files (channels, electrodes, events) carried by the input are not used. Use it as the import step for BioSemi EEG data.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/eeg/bdf` |
+| 📤 **Outputs** | `neuro/meeg/mne/raw` |
+| 🐳 **Container** | `brainlife/mne:0.23dev` |
+| ⚙️ **Resources** | 8 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.635](https://doi.org/10.25663/brainlife.app.635) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `bdf1` | `neuro/eeg/bdf` | yes | EEG recording in BioSemi BDF format (with optional BIDS sidecars, which are not read). |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `out_dir` | `neuro/meeg/mne/raw` | MNE Raw data in FIF format |
+
+📚 **References used by this App:**
+- Gramfort A et al. MEG and EEG data analysis with MNE-Python. Frontiers in Neuroscience 7:267 (2013). [doi:10.3389/fnins.2013.00267](https://doi.org/10.3389/fnins.2013.00267)
+
+<!-- brainlife-app:end -->
+
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.635-blue.svg)](https://doi.org/10.25663/brainlife.app.635)
 
